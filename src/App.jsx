@@ -1,20 +1,20 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
+import HowIWork from "./components/HowIWork";
 import Projects from "./components/Projects";
+import TechStack from "./components/TechStack";
+import ExplainPortfolio from "./components/ExplainPortfolio";
 import Footer from "./components/Footer";
-import ScrollProgress from "./components/ScrollProgress";
 
 function App() {
   return (
     <>
-      <ScrollProgress />
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
+      <HowIWork />
       <Projects />
+      <TechStack />
+      <ExplainPortfolio />
       <Footer />
     </>
   );

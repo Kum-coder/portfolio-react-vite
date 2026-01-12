@@ -6,15 +6,18 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 40);
 
       const sections = ["about", "skills", "projects"];
       sections.forEach((section) => {
         const el = document.getElementById(section);
         if (el) {
-          const top = el.offsetTop - 120;
+          const offset = el.offsetTop - 140;
           const height = el.offsetHeight;
-          if (window.scrollY >= top && window.scrollY < top + height) {
+          if (
+            window.scrollY >= offset &&
+            window.scrollY < offset + height
+          ) {
             setActive(section);
           }
         }
@@ -26,17 +29,17 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+    <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       {/* LOGO */}
-      <div className="logo">
-        <img src="/python-logo.png" alt="Python Logo" />
+      <a href="#about" className="logo">
+        <img src="/python-logo.png" alt="Python Full Stack Logo" />
         <span>
           Python <strong>Full-Stack</strong>
         </span>
-      </div>
+      </a>
 
       {/* NAV LINKS */}
-      <div className="nav-links">
+      <nav className="nav-links">
         <a href="#about" className={active === "about" ? "active" : ""}>
           About
         </a>
@@ -46,8 +49,8 @@ function Navbar() {
         <a href="#projects" className={active === "projects" ? "active" : ""}>
           Projects
         </a>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 
